@@ -1,0 +1,7 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn 
+flask
+npx tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch
