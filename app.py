@@ -47,6 +47,7 @@ def signin():
         if user and user.check_password(password):
             # If user exists and password matches, sign in
             session['user_id'] = user.id
+            session['email'] = user.email
             flash('Logged in successfully!')
             return redirect(url_for('home'))
         else:
@@ -99,6 +100,18 @@ def register():
 
     return render_template('register.html')
 
+@app.route('/profile',methods=['GET','POST'])
+def profile():
+    if 'user_id' not in session:  # Ensure user is logged in
+        return redirect(url_for('signin'))
+
+    user_id = session['user_id']
+    email_id = session.get('email')# Get the logged-in user's ID
+    user = User.query.get(user_id)  # Retrieve the user object to get the username
+    
+    
+    return render_template('profile.html',username=user.username,email=email_id)
+
 
 
 
@@ -107,34 +120,16 @@ def register():
 
 @app.route('/records', methods=['GET', 'POST'])
 def records():
-    if 'user_id' not in session:  # Ensure user is logged in
-        return redirect(url_for('signin'))
-
     user_id = session['user_id']  # Get the logged-in user's ID
-    user = User.query.get(user_id)  # Retrieve the user object to get the username
-
-    if request.method == "POST":
-        title = request.form['title']
-        reading = request.form['reading']
-        
-        try:
-            # Create a new health record associated with the current user
-            new_record = healthrecords(title=title, reading=int(reading), user_id=user_id)
-            # Add and commit the new record to the database
-            db.session.add(new_record)
-            db.session.commit()
-            flash('Record added successfully!')
-        except Exception as e:
-            db.session.rollback()  # Rollback in case of error
-            flash('Failed to add record: ' + str(e))
-
-        return redirect(url_for('records'))  # Redirect after submission
-
-    # Retrieve records belonging to the logged-in user
-    all_records = healthrecords.query.filter_by(user_id=user_id).all()
-    return render_template("records.html", records=all_records, username=user.username)
+    user = User.query.get(user_id)
+    return render_template("records.html",username=user.username)
+    
 
 
+
+@app.route("/bp", methods=['GET','POST'])
+def bp():
+    return render_template('bp.html')
 
 
 
@@ -143,14 +138,11 @@ def records():
 
 @app.route("/dashboard")
 def dashboard():
-    if 'user_id' not in session:  # Ensure user is logged in
-        return redirect(url_for('signin'))
+    user_id = session['user_id']  # Get the logged-in user's ID
+    user = User.query.get(user_id)
+    
 
-    user_id = session['user_id']
-    user = User.query.get(user_id)  # Get the user object
-    user_records = healthrecords.query.filter_by(user_id=user_id).all()
-
-    return render_template("dashboard.html", username=user.username, records=user_records)
+    return render_template("dashboard.html", username=user.username, )
 
 
 @app.route('/logout')

@@ -93,3 +93,38 @@ npx tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch
             </div>
         </div>
     </nav>
+
+
+
+
+
+
+
+
+
+    if 'user_id' not in session:  # Ensure user is logged in
+        return redirect(url_for('signin'))
+
+    user_id = session['user_id']  # Get the logged-in user's ID
+    user = User.query.get(user_id)  # Retrieve the user object to get the username
+
+    if request.method == "POST":
+        title = request.form['title']
+        reading = request.form['reading']
+        
+        try:
+            # Create a new health record associated with the current user
+            new_record = healthrecords(title=title, reading=int(reading), user_id=user_id)
+            # Add and commit the new record to the database
+            db.session.add(new_record)
+            db.session.commit()
+            flash('Record added successfully!')
+        except Exception as e:
+            db.session.rollback()  # Rollback in case of error
+            flash('Failed to add record: ' + str(e))
+
+        return redirect(url_for('records'))  # Redirect after submission
+
+    # Retrieve records belonging to the logged-in user
+    all_records = healthrecords.query.filter_by(user_id=user_id).all()
+    return render_template("records.html", records=all_records, username=user.username)

@@ -1,0 +1,48 @@
+<main class="flex-grow p-6">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-lg font-semibold mb-4">User Profile</h2>
+        
+        <div class="flex items-center mb-4">
+            <img src="https://via.placeholder.com/100" alt="Profile Photo" class="rounded-full border-2 border-indigo-600 mr-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Name</label>
+                <p class="mt-1 text-gray-900">{{username}}</p> <!-- Replace with actual data -->
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Email</label>
+            <p class="mt-1 text-gray-900">{{email}}</p> <!-- Replace with actual data -->
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Age</label>
+            <p class="mt-1 text-gray-900">30</p> <!-- Replace with actual data -->
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Height</label>
+            <p class="mt-1 text-gray-900">175 cm</p> <!-- Replace with actual data -->
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Weight</label>
+            <p class="mt-1 text-gray-900">70 kg</p> <!-- Replace with actual data -->
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Address</label>
+            <p class="mt-1 text-gray-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> <!-- Replace with actual data -->
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Bio</label>
+            <p class="mt-1 text-gray-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> <!-- Replace with actual data -->
+        </div>
+
+        <div class="flex justify-between mt-6">
+            <button class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-500">
+                Edit
+            </button>
+            <button class="bg-green-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-500">
+                Save Changes
+            </button>
+        </div>
+    </div>
+</main>
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
