@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
-from models import db, User, healthrecords  #  healthrecords is also defined in models.py
+from datetime import datetime
+from models import db, User, healthrecords,UserProfile  #  healthrecords is also defined in models.py
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/AyuCare_db'
@@ -15,14 +16,18 @@ with app.app_context():
 
 @app.route("/")
 def index():
-    return  render_template ("index.html")
+    return render_template("index.html")
+
 @app.route("/home")
 def home():
-    user_id = session.get('user_id')
+    user_id = session.get('user_id')  # Retrieve the logged-in user's ID from the session
     username = None
+
     if user_id:
-        user = User.query.get(user_id)
-        username = user.username if user else None
+        user = User.query.get(user_id)  # Query the User model to get the user
+        if user:
+            username = user.username  # Get the username from the user object
+
     return render_template("index.html", username=username)
 
 @app.route('/test-db')
@@ -100,18 +105,103 @@ def register():
 
     return render_template('register.html')
 
-@app.route('/profile',methods=['GET','POST'])
+
+@app.route('/profile')
 def profile():
-    if 'user_id' not in session:  # Ensure user is logged in
+    user_id = session.get('user_id')  # Get the logged-in user ID from the session
+    
+    if not user_id:
+        flash('Please log in to view your profile.', 'warning')
         return redirect(url_for('signin'))
-
-    user_id = session['user_id']
-    email_id = session.get('email')# Get the logged-in user's ID
-    user = User.query.get(user_id)  # Retrieve the user object to get the username
     
+    # Fetch the user from the User model
+    user = User.query.get(user_id)
     
-    return render_template('profile.html',username=user.username,email=email_id)
+    if not user:
+        flash('User not found.', 'danger')
+        return redirect(url_for('signin'))
+    
+    # Fetch the user profile
+    user_profile = UserProfile.query.filter_by(user_id=user_id).first()
 
+    return render_template('profile.html', user=user, user_profile=user_profile)
+
+
+
+
+
+@app.route('/profile_edit', methods=['GET', 'POST'])
+def edit_profile():
+    user_id = session.get('user_id')  # Ensure user is logged in and get user_id from session
+
+    # Fetch the user's profile
+    user_profile = UserProfile.query.filter_by(user_id=user_id).first()
+    
+    if not user_profile:
+        flash('Profile not found.', 'danger')
+        return redirect(url_for('profile'))  # Redirect to profile if no profile exists
+
+    if request.method == 'POST':
+        # Get data from form
+        user_profile.phone_number = request.form['phone_number']
+        user_profile.age = request.form['age']
+        user_profile.weight = request.form['weight']
+        user_profile.address = request.form['address']
+        user_profile.bio = request.form['bio']
+        
+        # Update the 'updated_at' field
+        user_profile.updated_at = datetime.now()
+
+        # Commit changes to the database
+        db.session.commit()
+
+        flash('Profile updated successfully!', 'success')
+        return redirect(url_for('profile'))
+
+    # Render the edit profile template with the current user profile data
+    return render_template('profile_form.html', user_profile=user_profile)
+
+@app.route('/add_profile', methods=['GET', 'POST'])
+def add_profile():
+    user_id = session.get('user_id')  # Get the logged-in user's ID
+
+    if not user_id:
+        flash('You need to be logged in to create a profile.', 'danger')
+        return redirect(url_for('login'))  # Redirect to login if not logged in
+
+    # Check if the user already has a profile
+    user_profile = UserProfile.query.filter_by(user_id=user_id).first()
+    if user_profile:
+        flash('Profile already exists. You can edit it instead.', 'warning')
+        return redirect(url_for('edit_profile'))
+
+    if request.method == 'POST':
+        # Collect data from the form
+        phone_number = request.form['phone_number']
+        age = request.form['age']
+        weight = request.form['weight']
+        address = request.form['address']
+        bio = request.form['bio']
+
+        # Create a new profile record
+        new_profile = UserProfile(
+            user_id=user_id,
+            phone_number=phone_number,
+            age=age,
+            weight=weight,
+            address=address,
+            bio=bio
+        )
+
+        # Save to the database
+        db.session.add(new_profile)
+        db.session.commit()
+
+        flash('Profile created successfully!', 'success')
+        return redirect(url_for('profile'))  # Redirect to the profile view
+
+    # Render the form for adding a new profile
+    return render_template('profile_form.html', user_profile=None)
 
 
 
@@ -120,9 +210,12 @@ def profile():
 
 @app.route('/records', methods=['GET', 'POST'])
 def records():
-    user_id = session['user_id']  # Get the logged-in user's ID
-    user = User.query.get(user_id)
-    return render_template("records.html",username=user.username)
+    if 'user_id' not in session:  # Ensure user is logged in
+        return render_template('records.html')
+    else:
+     user_id = session['user_id']  # Get the logged-in user's ID
+     user = User.query.get(user_id)
+     return render_template("records.html",username=user.username)
     
 
 
@@ -138,11 +231,12 @@ def bp():
 
 @app.route("/dashboard")
 def dashboard():
-    user_id = session['user_id']  # Get the logged-in user's ID
-    user = User.query.get(user_id)
-    
-
-    return render_template("dashboard.html", username=user.username, )
+    if 'user_id' not in session:  # Ensure user is logged in
+        return render_template('dashboard.html')
+    else:
+     user_id = session['user_id']  # Get the logged-in user's ID
+     user = User.query.get(user_id)
+     return render_template("dashboard.html",username=user.username)
 
 
 @app.route('/logout')

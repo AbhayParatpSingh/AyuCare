@@ -1,6 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from datetime import datetime,timezone
+import os
+from werkzeug.utils import secure_filename
+from flask import url_for
 db = SQLAlchemy()
 
 class User(db.Model):
@@ -26,3 +29,25 @@ class healthrecords(db.Model):  # Class name should be singular
     # Foreign key relationship to associate records with a specific user
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)  # Match table name 'users'
     user = db.relationship('User', backref=db.backref('healthrecords', lazy=True))  # Use 'User' for relationship
+
+
+
+
+class UserProfile(db.Model):
+    __tablename__ = 'user_profile'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, nullable=False, unique=True)  # Foreign key for user authentication model
+    
+    phone_number = db.Column(db.String(15), nullable=True)
+    age = db.Column(db.Integer, nullable=True)
+    weight = db.Column(db.Integer, nullable=True)
+    address = db.Column(db.String(255), nullable=True)
+    bio = db.Column(db.Text, nullable=True)
+    
+    def __repr__(self):
+        return f'<UserProfile {self.first_name} {self.last_name}>'
+    
+    
+
+
