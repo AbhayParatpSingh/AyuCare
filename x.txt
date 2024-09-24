@@ -100,7 +100,7 @@ npx tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch
 
 
 
-
+npx tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch
 
     if 'user_id' not in session:  # Ensure user is logged in
         return redirect(url_for('signin'))

@@ -6,4 +6,3 @@ scikit-learn
 flask
 flask_login
 flask_sqlalchemy
-npx tailwindcss -i ./static/src/input.css -o ./static/css/output.css --watch
