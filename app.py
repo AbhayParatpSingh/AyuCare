@@ -223,7 +223,14 @@ def records():
 
 @app.route("/bp", methods=['GET','POST'])
 def bp():
-    return render_template('bp.html')
+    if 'user_id' not in session:  # Ensure user is logged in
+        return render_template('signin.html')
+    else:
+     user_id = session['user_id']  # Get the logged-in user's ID
+     user = User.query.get(user_id)
+    return render_template('bp.html',username=user.username)
+    
+   
 
 
 
