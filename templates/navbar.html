@@ -7,14 +7,14 @@
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                        <a href="/dashboard" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
-                        <a href="/records" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Records</a>
+                        <a href="/" class="rounded-md  px-3 py-2 text-lg font-large text-white" aria-current="page">Home</a>
+                        <a href="/dashboard" class="rounded-md px-3 py-2 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+                        <a href="/records" class="rounded-md px-3 py-2 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Records</a>
                         
                         <div class="flex items-center">
                             <!-- Other nav links -->
                             <div class="relative inline-block text-left">
-                                <button id="service-button" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-haspopup="true" aria-expanded="false" onclick="toggleServiceDropdown()">
+                                <button id="service-button" class="rounded-md px-3 py-2 text-lg font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-haspopup="true" aria-expanded="false" onclick="toggleServiceDropdown()">
                                     Services
                                     
                                 </button>
@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="shake bg-white-500 text-white font-bold py-2 px-4 rounded hover:text-red-600">
+                        <button class="shake bg-white-500 text-lg text-white font-bold py-2 px-4 rounded hover:text-red-600">
                             New
                           </button>
                     </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <!-- Login and Sign Up buttons -->
-                <a href="/signin" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sign in</a>
+                <a href="/signin" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Sign in</a>
                 
                 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                   <div class="relative flex h-16 items-center justify-between">
@@ -89,12 +89,12 @@
 
 <!-- Mobile menu, show/hide based on menu state. -->
 <div class="sm:hidden" id="mobile-menu">
-<div class="space-y-1 px-2 pb-3 pt-2">
+<div class="space-y-1 px-2 pb-3 pt-20">
 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-<a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-<a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-<a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-<a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+<a href="/" class="block rounded-md  px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+<a href="/dashboard" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+<a href="/records" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Records</a>
+
 </div>
 </div>
 </nav>
