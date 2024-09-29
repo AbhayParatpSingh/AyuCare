@@ -20,16 +20,18 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-class healthrecords(db.Model):  # Class name should be singular
-    __tablename__ = 'healthrecords'  # Table name for health records
+class dailyrecord(db.Model):  # Class name should be singular and in PascalCase
+    __tablename__ = 'dailyrecord'  # Table name for health records
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), nullable=False)
-    reading = db.Column(db.Integer, nullable=False)
+    systolic = db.Column(db.Integer, nullable=True)
+    diastolic = db.Column(db.Integer, nullable=True)
+    fasting_sugar = db.Column(db.Float, nullable=True)
+    bedtime_sugar = db.Column(db.Float, nullable=True)
 
     # Foreign key relationship to associate records with a specific user
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)  # Match table name 'users'
-    user = db.relationship('User', backref=db.backref('healthrecords', lazy=True))  # Use 'User' for relationship
-
+    user = db.relationship('User', backref=db.backref('dailyrecord', lazy=True))  # Use 'User' for relationship
 
 
 
