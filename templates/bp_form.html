@@ -1,0 +1,115 @@
+<div class="mx-auto bg-white p-6">
+    <form id="recordForm" action="/daily_record" method="POST" onsubmit="return validateForm()">
+        <div class="mb-4">
+            <label for="recordType" class="block text-gray-700 mb-1">Choose Reading Type</label>
+            <select id="recordType" name="record_type" onchange="toggleFields()" required
+                class="block w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 p-2">
+                <option value="">-- Select --</option>
+                <option value="bp">Blood Pressure</option>
+                <option value="sugar">Sugar</option>
+            </select>
+        </div>
+
+        <!-- BP Fields -->
+        <div id="bpFields" class="hidden">
+            <div class="mb-4">
+                <label for="systolic" class="block text-gray-700 mb-1">Systolic</label>
+                <input type="number" id="systolic" name="systolic" required
+                    class="block w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 p-2">
+            </div>
+            <div class="mb-4">
+                <label for="diastolic" class="block text-gray-700 mb-1">Diastolic</label>
+                <input type="number" id="diastolic" name="diastolic" required
+                    class="block w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 p-2">
+            </div>
+        </div>
+
+        <!-- Sugar Fields -->
+        <div id="sugarFields" class="hidden">
+            <div class="mb-4">
+                <label for="fasting_sugar" class="block text-gray-700 mb-1">Fasting</label>
+                <input type="number" id="fasting_sugar" name="fasting_sugar"
+                    class="block w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 p-2">
+            </div>
+            <div class="mb-4">
+                <label for="bedtime_sugar" class="block text-gray-700 mb-1">Bedtime</label>
+                <input type="number" id="bedtime_sugar" name="bedtime_sugar"
+                    class="block w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 p-2">
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-4">
+            <button type="submit"
+                class="w-48 bg-gray-500 text-white font-bold py-2 rounded-lg hover:bg-gray-900 transition duration-200">Add Record</button>
+            <button type="reset"
+                class="w-48 bg-gray-800 text-white font-bold py-2 rounded-lg hover:bg-gray-900 transition duration-200">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function toggleFields() {
+        const recordType = document.getElementById('recordType').value;
+        document.getElementById('bpFields').classList.toggle('hidden', recordType !== 'bp');
+        document.getElementById('sugarFields').classList.toggle('hidden', recordType !== 'sugar');
+
+        // Clear input values and required attributes based on selection
+        if (recordType === 'bp') {
+            document.getElementById('fasting_sugar').value = '';
+            document.getElementById('bedtime_sugar').value = '';
+            document.getElementById('fasting_sugar').removeAttribute('required');
+            document.getElementById('bedtime_sugar').removeAttribute('required');
+            document.getElementById('systolic').setAttribute('required', true);
+            document.getElementById('diastolic').setAttribute('required', true);
+        } else if (recordType === 'sugar') {
+            document.getElementById('systolic').value = '';
+            document.getElementById('diastolic').value = '';
+            document.getElementById('systolic').removeAttribute('required');
+            document.getElementById('diastolic').removeAttribute('required');
+            document.getElementById('fasting_sugar').setAttribute('required', true);
+            document.getElementById('bedtime_sugar').setAttribute('required', true);
+        }
+    }
+
+    function validateForm() {
+        const recordType = document.getElementById('recordType').value;
+
+        // Validate BP fields
+        if (recordType === 'bp') {
+            const systolic = document.getElementById('systolic');
+            const diastolic = document.getElementById('diastolic');
+
+            if (!systolic.value) {
+                alert("Please enter a valid Systolic value.");
+                systolic.focus(); // Focus on the first invalid field
+                return false; // Prevent form submission
+            }
+
+            if (!diastolic.value) {
+                alert("Please enter a valid Diastolic value.");
+                diastolic.focus(); // Focus on the first invalid field
+                return false; // Prevent form submission
+            }
+        }
+
+        // Validate Sugar fields
+        if (recordType === 'sugar') {
+            const fastingSugar = document.getElementById('fasting_sugar');
+            const bedtimeSugar = document.getElementById('bedtime_sugar');
+
+            if (!fastingSugar.value) {
+                alert("Please enter a valid Fasting Sugar value.");
+                fastingSugar.focus(); // Focus on the first invalid field
+                return false; // Prevent form submission
+            }
+
+            if (!bedtimeSugar.value) {
+                alert("Please enter a valid Bedtime Sugar value.");
+                bedtimeSugar.focus(); // Focus on the first invalid field
+                return false; // Prevent form submission
+            }
+        }
+
+        return true; // Allow form submission
+    }
+</script>

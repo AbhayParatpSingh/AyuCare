@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from models import db, User, healthrecords,UserProfile  #  healthrecords is also defined in models.py
+from models import db, User,dailyrecord,UserProfile  #  healthrecords is also defined in models.py
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/AyuCare_db'
@@ -22,7 +22,7 @@ def index():
 @app.route("/home")
 def home():
     user_id = session.get('user_id')  # Retrieve the logged-in user's ID from the session
-    username = None
+    
 
     if user_id:
         user = User.query.get(user_id)  # Query the User model to get the user
@@ -221,15 +221,48 @@ def records():
 
 
 
-@app.route("/bp", methods=['GET','POST'])
-def bp():
-    if 'user_id' not in session:  # Ensure user is logged in
-        return render_template('signin.html')
-    else:
-     user_id = session['user_id']  # Get the logged-in user's ID
-     user = User.query.get(user_id)
-    return render_template('bp.html',username=user.username)
-    
+@app.route("/daily_record", methods=['GET', 'POST'])
+def daily_record():
+    if 'user_id' not in session:  # Ensure the user is logged in
+        return redirect(url_for('signin'))  # Redirect to the sign-in page
+
+    if request.method == 'POST':
+        record_type = request.form.get('record_type')
+
+        # Prepare to save data based on selected record type
+        if record_type == 'bp':
+            systolic = request.form.get('systolic')
+            diastolic = request.form.get('diastolic')
+            new_record = dailyrecord(
+                title='Blood Pressure',
+                systolic=systolic,
+                diastolic=diastolic,
+                fasting_sugar=None,
+                bedtime_sugar=None,
+                user_id=session['user_id']  # Associate with the logged-in user
+            )
+        elif record_type == 'sugar':
+            fasting_sugar = request.form.get('fasting_sugar')
+            bedtime_sugar = request.form.get('bedtime_sugar')
+            new_record = dailyrecord(
+                title='Sugar',
+                systolic=None,  # Set to None as these fields are not used for sugar
+                diastolic=None,
+                fasting_sugar=fasting_sugar,
+                bedtime_sugar=bedtime_sugar,
+                user_id=session['user_id']  # Associate with the logged-in user
+            )
+        else:
+            flash('Please select a valid reading type.', 'error')
+            return redirect(url_for('daily_record'))
+
+        # Add the new record to the database
+        db.session.add(new_record)
+        db.session.commit()
+        flash('Record added successfully!', 'success')
+        return redirect(url_for('daily_record'))  # Redirect to another route after adding
+
+    return render_template('bp.html', title='Add Daily Record')
    
 
 
