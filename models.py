@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime,timezone
+from sqlalchemy.sql import func
 import os
 from werkzeug.utils import secure_filename
 from flask import url_for
@@ -28,6 +29,9 @@ class dailyrecord(db.Model):  # Class name should be singular and in PascalCase
     diastolic = db.Column(db.Integer, nullable=True)
     fasting_sugar = db.Column(db.Float, nullable=True)
     bedtime_sugar = db.Column(db.Float, nullable=True)
+    record_date = db.Column(db.Date, server_default=func.current_date())  # Automatically set the current date
+    record_time = db.Column(db.Time, server_default=func.current_time())
+    
 
     # Foreign key relationship to associate records with a specific user
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)  # Match table name 'users'

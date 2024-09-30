@@ -221,6 +221,8 @@ def records():
 
 
 
+from datetime import datetime
+
 @app.route("/daily_record", methods=['GET', 'POST'])
 def daily_record():
     if 'user_id' not in session:  # Ensure the user is logged in
@@ -228,8 +230,12 @@ def daily_record():
 
     if request.method == 'POST':
         record_type = request.form.get('record_type')
+        
+        # Get the current date and time
+        current_date = datetime.now().date()
+        current_time = datetime.now().time()
 
-        # Prepare to save data based on selected record type
+        # Prepare to save data based on the selected record type
         if record_type == 'bp':
             systolic = request.form.get('systolic')
             diastolic = request.form.get('diastolic')
@@ -239,7 +245,9 @@ def daily_record():
                 diastolic=diastolic,
                 fasting_sugar=None,
                 bedtime_sugar=None,
-                user_id=session['user_id']  # Associate with the logged-in user
+                user_id=session['user_id'],  # Associate with the logged-in user
+                record_date=current_date,  # Store the current date
+                record_time=current_time   # Store the current time
             )
         elif record_type == 'sugar':
             fasting_sugar = request.form.get('fasting_sugar')
@@ -250,7 +258,9 @@ def daily_record():
                 diastolic=None,
                 fasting_sugar=fasting_sugar,
                 bedtime_sugar=bedtime_sugar,
-                user_id=session['user_id']  # Associate with the logged-in user
+                user_id=session['user_id'],  # Associate with the logged-in user
+                record_date=current_date,  # Store the current date
+                record_time=current_time   # Store the current time
             )
         else:
             flash('Please select a valid reading type.', 'error')
@@ -263,6 +273,7 @@ def daily_record():
         return redirect(url_for('daily_record'))  # Redirect to another route after adding
 
     return render_template('bp.html', title='Add Daily Record')
+
    
 
 
