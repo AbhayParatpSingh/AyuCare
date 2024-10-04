@@ -1,0 +1,200 @@
+Conditions,Symptom 1,Symptom 2,Symptom 3,Symptom 4,Symptom 5
+Lymphedema,Swelling (arms/legs),Heaviness or Tightness,Restricted Range of Motion (ROM),Pain,Discomfort
+Lymphedema,Swelling (arms/legs),Pain,Discomfort,Heaviness or Tightness,
+Lymphedema,Heaviness or Tightness,Discomfort,Restricted Range of Motion (ROM),,
+Lymphedema,Swelling (arms/legs),Pain,,Discomfort,
+Lymphedema,Pain,Swelling (arms/legs),Discomfort,Heaviness or Tightness,
+Lymphedema,Heaviness or Tightness,Discomfort,Swelling (arms/legs),,Pain
+Lymphedema,Swelling (arms/legs),Heaviness or Tightness,Discomfort,Restricted Range of Motion (ROM),
+Lymphedema,Pain,Discomfort,Swelling (arms/legs),,
+Lymphedema,Swelling (arms/legs),Heaviness or Tightness,Restricted Range of Motion (ROM),Pain,Discomfort
+Sport Injuries,Swelling,Bruising,Pain,Reduced Range of Motion,Joint Instability
+Sport Injuries,Bruising,Swelling,Joint Instability,,Pain
+Sport Injuries,Pain,Reduced Range of Motion,,Bruising,
+Sport Injuries,Joint Instability,,Swelling,,
+Sport Injuries,Reduced Range of Motion,Pain,,,
+Sport Injuries,,Reduced Range of Motion,Bruising,Pain,
+Sport Injuries,Joint Instability,,,Swelling,
+Sport Injuries,,,,Reduced Range of Motion,
+Sport Injuries,,,Pain,,Swelling
+Sport Injuries,Swelling,Pain,Reduced Range of Motion,Joint Instability,Bruising
+Muscular Dystrophy,Muscle Weakness,Difficulty Walking,Frequent Falls,Trouble Breathing,Heart Problems
+Muscular Dystrophy,,Muscle Weakness,Trouble Breathing,Heart Problems,
+Muscular Dystrophy,Muscle Weakness,Frequent Falls,,,Heart Problems
+Muscular Dystrophy,Frequent Falls,Difficulty Walking,Muscle Weakness,,
+Muscular Dystrophy,,Trouble Breathing,,Muscle Weakness,
+Muscular Dystrophy,Trouble Breathing,Muscle Weakness,Frequent Falls,Heart Problems,
+Muscular Dystrophy,,,Trouble Breathing,Frequent Falls,
+Muscular Dystrophy,Frequent Falls,,,Muscle Weakness,
+Muscular Dystrophy,,Difficulty Walking,,Frequent Falls,Heart Problems
+Muscular Dystrophy,Difficulty Walking,,Muscle Weakness,Frequent Falls,
+Back and Neck Pain,Stiffness,Muscle Spasms,Sharp Pain,Dull Ache,Difficulty Moving
+Back and Neck Pain,Stiffness,,Sharp Pain,,
+Back and Neck Pain,Stiffness,Muscle Spasms,Sharp Pain,,Difficulty Moving
+Back and Neck Pain,,Muscle Spasms,,Dull Ache,
+Back and Neck Pain,Stiffness,Muscle Spasms,,Dull Ache,Difficulty Moving
+Back and Neck Pain,,Sharp Pain,,Dull Ache,Difficulty Moving
+Back and Neck Pain,Stiffness,Muscle Spasms,,,Difficulty Moving
+Back and Neck Pain,Stiffness,Sharp Pain,Muscle Spasms,,
+Back and Neck Pain,Stiffness,Muscle Spasms,Difficulty Moving,,
+Back and Neck Pain,Stiffness,,Dull Ache,,Difficulty Moving
+Range of Motion (ROM),Reduced Flexibility,Difficulty in Moving Joints,Stiffness,Pain,Difficulty Moving
+Range of Motion (ROM),Reduced Flexibility,,Stiffness,Pain,
+Range of Motion (ROM),Reduced Flexibility,Difficulty in Moving Joints,,,Difficulty Moving
+Range of Motion (ROM),Reduced Flexibility,Difficulty in Moving Joints,Stiffness,,Difficulty Moving
+Range of Motion (ROM),Reduced Flexibility,,Stiffness,Pain,
+Range of Motion (ROM),,Difficulty in Moving Joints,,Pain,Difficulty Moving
+Range of Motion (ROM),Reduced Flexibility,,Stiffness,Pain,
+Range of Motion (ROM),Reduced Flexibility,,,Pain,Difficulty Moving
+Range of Motion (ROM),Reduced Flexibility,Difficulty in Moving Joints,Stiffness,Pain,Difficulty Moving
+Range of Motion (ROM),,Difficulty in Moving Joints,Stiffness,Pain,Difficulty Moving
+Osteoporosis,Bone Pain,Fractures,Loss of Height,Stooped Posture,Back Pain
+Osteoporosis,,Fractures,Loss of Height,Stooped Posture,Back Pain
+Osteoporosis,Bone Pain,,Loss of Height,Stooped Posture,Back Pain
+Osteoporosis,Bone Pain,Fractures,Loss of Height,,Back Pain
+Osteoporosis,Bone Pain,Fractures,Loss of Height,Stooped Posture,
+Osteoporosis,Bone Pain,,,Stooped Posture,Back Pain
+Osteoporosis,Bone Pain,Fractures,Loss of Height,,Back Pain
+Osteoporosis,Bone Pain,Fractures,Loss of Height,Stooped Posture,
+Osteoporosis,,Fractures,,Stooped Posture,Back Pain
+Osteoporosis,Bone Pain,Fractures,Loss of Height,Stooped Posture,Back Pain
+Vertigo,Dizziness,Spinning Sensation,Loss of Balance,Nausea,
+Vertigo,Dizziness,Spinning Sensation,Loss of Balance,,Vomiting
+Vertigo,Dizziness,Spinning Sensation,,Nausea,Vomiting
+Vertigo,Dizziness,,Loss of Balance,Nausea,Vomiting
+Vertigo,,Spinning Sensation,Loss of Balance,Nausea,Vomiting
+Vertigo,Dizziness,,Loss of Balance,,Vomiting
+Vertigo,,Spinning Sensation,,Nausea,Vomiting
+Vertigo,Dizziness,,Loss of Balance,Nausea,
+Vertigo,Dizziness,Spinning Sensation,,,Vomiting
+Vertigo,Dizziness,Spinning Sensation,Loss of Balance,Nausea,Vomiting
+Headache,Throbbing Pain,Pressure in the Head,Sensitivity to Light,Sensitivity to Sound,Nausea
+Headache,Throbbing Pain,,Sensitivity to Light,Sensitivity to Sound,Nausea
+Headache,Throbbing Pain,Pressure in the Head,,Sensitivity to Sound,Nausea
+Headache,Throbbing Pain,Pressure in the Head,Sensitivity to Light,Sensitivity to Sound,Nausea
+Headache,Throbbing Pain,Pressure in the Head,Sensitivity to Light,Sensitivity to Sound,
+Headache,Throbbing Pain,Pressure in the Head,,,Nausea
+Headache,Throbbing Pain,,,Sensitivity to Sound,Nausea
+Headache,Throbbing Pain,Pressure in the Head,Sensitivity to Light,Sensitivity to Sound,Nausea
+Headache,,Pressure in the Head,Sensitivity to Light,,Nausea
+Headache,Throbbing Pain,Pressure in the Head,Sensitivity to Light,Sensitivity to Sound,Nausea
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,Weakness,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,,,Weakness,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,Weakness,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,Weakness,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,Weakness,,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,Weakness,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,,,Pain in Hand/Wrist,
+Carpal Tunnel Syndrome,Tingling,Numbness in Hands or Fingers,Weakness,Pain in Hand/Wrist,
+Chronic Fatigue Syndrome,Extreme Fatigue,Unrefreshing Sleep,Muscle Pain,Joint Pain,Sore Throat
+Chronic Fatigue Syndrome,Extreme Fatigue,,Muscle Pain,Joint Pain,Sore Throat
+Chronic Fatigue Syndrome,Extreme Fatigue,Unrefreshing Sleep,,Joint Pain,Sore Throat
+Chronic Fatigue Syndrome,Extreme Fatigue,Unrefreshing Sleep,Muscle Pain,,Sore Throat
+Chronic Fatigue Syndrome,Extreme Fatigue,Unrefreshing Sleep,Muscle Pain,Joint Pain,
+Chronic Fatigue Syndrome,Extreme Fatigue,Unrefreshing Sleep,,Joint Pain,
+Chronic Fatigue Syndrome,Extreme Fatigue,,Muscle Pain,,Sore Throat
+Chronic Fatigue Syndrome,,Unrefreshing Sleep,Muscle Pain,Joint Pain,
+Chronic Fatigue Syndrome,Extreme Fatigue,,,Joint Pain,Sore Throat
+Chronic Fatigue Syndrome,Extreme Fatigue,Unrefreshing Sleep,Muscle Pain,Joint Pain,Sore Throat
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,Shortness of Breath,Wheezing,Fatigue,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,,Wheezing,Fatigue,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,Shortness of Breath,,Fatigue,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,Shortness of Breath,Wheezing,,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,Shortness of Breath,Wheezing,Fatigue,
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,,,Fatigue,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,Shortness of Breath,,,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,Shortness of Breath,Wheezing,,
+Respiratory Issues (Chronic Bronchitis),Chronic Cough,,Wheezing,,Chest Tightness
+Respiratory Issues (Chronic Bronchitis),,Shortness of Breath,Wheezing,Fatigue,Chest Tightness
+Burns,Pain,Redness,Blisters,Swelling,Peeling Skin
+Burns,,Redness,Blisters,Swelling,Peeling Skin
+Burns,Pain,,Blisters,Swelling,Peeling Skin
+Burns,Pain,Redness,,Swelling,Peeling Skin
+Burns,Pain,Redness,Blisters,,Peeling Skin
+Burns,Pain,Redness,Blisters,Swelling,
+Burns,Pain,,,Swelling,Peeling Skin
+Burns,Pain,Redness,Blisters,,
+Burns,,Redness,Blisters,,Peeling Skin
+Burns,Pain,Redness,Blisters,Swelling,Peeling Skin
+Joint Replacement,Joint Stiffness,Pain,Swelling,Limited Mobility,Difficulty Walking
+Joint Replacement,,Pain,Swelling,Limited Mobility,Difficulty Walking
+Joint Replacement,Joint Stiffness,,Swelling,Limited Mobility,Difficulty Walking
+Joint Replacement,Joint Stiffness,Pain,,Limited Mobility,Difficulty Walking
+Joint Replacement,Joint Stiffness,Pain,Swelling,,Difficulty Walking
+Joint Replacement,Joint Stiffness,Pain,Swelling,Limited Mobility,
+Joint Replacement,Joint Stiffness,Pain,,Limited Mobility,
+Joint Replacement,Joint Stiffness,,Swelling,Limited Mobility,Difficulty Walking
+Joint Replacement,Joint Stiffness,Pain,,Limited Mobility,Difficulty Walking
+Joint Replacement,Joint Stiffness,Pain,Swelling,,Difficulty Walking
+Ankle Sprain,Pain,Swelling,Bruising,Limited Mobility,Tenderness
+Ankle Sprain,,Swelling,Bruising,Limited Mobility,Tenderness
+Ankle Sprain,Pain,,Bruising,Limited Mobility,Tenderness
+Ankle Sprain,Pain,Swelling,,Limited Mobility,Tenderness
+Ankle Sprain,Pain,Swelling,Bruising,,Tenderness
+Ankle Sprain,Pain,Swelling,Bruising,Limited Mobility,
+Ankle Sprain,Pain,Swelling,,Limited Mobility,
+Ankle Sprain,Pain,Swelling,Bruising,,Tenderness
+Ankle Sprain,Pain,,Bruising,Limited Mobility,Tenderness
+Ankle Sprain,Pain,Swelling,Bruising,Limited Mobility,Tenderness
+Parkinsons Disease(Paralysis),Tremors,Stiff Muscles,Slow Movements,Balance Problems,Speech Changes
+Parkinsons Disease(Paralysis),,Stiff Muscles,Slow Movements,Balance Problems,Speech Changes
+Parkinsons Disease(Paralysis),Tremors,,Slow Movements,Balance Problems,Speech Changes
+Parkinsons Disease(Paralysis),Tremors,Stiff Muscles,,Balance Problems,Speech Changes
+Parkinsons Disease(Paralysis),Tremors,Stiff Muscles,Slow Movements,,Speech Changes
+Parkinsons Disease(Paralysis),Tremors,Stiff Muscles,Slow Movements,Balance Problems,
+Parkinsons Disease(Paralysis),Tremors,Stiff Muscles,Slow Movements,Balance Problems,Speech Changes
+Parkinsons Disease(Paralysis),Tremors,Stiff Muscles,,Balance Problems,
+Parkinsons Disease(Paralysis),,Stiff Muscles,,Balance Problems,Speech Changes
+Parkinsons Disease(Paralysis),Tremors,,Slow Movements,Balance Problems,Speech Changes
+Foot Fracture,Pain,Swelling,Bruising,Difficulty Walking,Tenderness
+Foot Fracture,Pain,,Bruising,Difficulty Walking,Tenderness
+Foot Fracture,,Swelling,Bruising,Difficulty Walking,Tenderness
+Foot Fracture,Pain,Swelling,,Difficulty Walking,Tenderness
+Foot Fracture,Pain,Swelling,Bruising,,Tenderness
+Foot Fracture,Pain,Swelling,Bruising,Difficulty Walking,
+Foot Fracture,Pain,Swelling,,,Tenderness
+Foot Fracture,Pain,Swelling,,Difficulty Walking,
+Foot Fracture,Pain,,Bruising,Difficulty Walking,
+Foot Fracture,,Swelling,,Difficulty Walking,Tenderness
+Huntingtons Disease,Involuntary Movements,Memory Loss,Depression,Mood Swings,Difficulty Walking
+Huntingtons Disease,,Memory Loss,Depression,Mood Swings,Difficulty Walking
+Huntingtons Disease,Involuntary Movements,,Depression,Mood Swings,Difficulty Walking
+Huntingtons Disease,Involuntary Movements,Memory Loss,,Mood Swings,Difficulty Walking
+Huntingtons Disease,Involuntary Movements,Memory Loss,Depression,,Difficulty Walking
+Huntingtons Disease,Involuntary Movements,Memory Loss,Depression,Mood Swings,
+Huntingtons Disease,Involuntary Movements,,Depression,,Difficulty Walking
+Huntingtons Disease,Involuntary Movements,Memory Loss,Depression,,
+Huntingtons Disease,Involuntary Movements,Memory Loss,Depression,Mood Swings,Difficulty Walking
+Huntingtons Disease,Involuntary Movements,Memory Loss,Depression,,
+Knee Ligament Injuries,Swelling,Instability,Sharp Pain,Difficulty Bearing Weight,Popping Sound
+Knee Ligament Injuries,,Instability,Sharp Pain,Difficulty Bearing Weight,Popping Sound
+Knee Ligament Injuries,Swelling,,Sharp Pain,Difficulty Bearing Weight,Popping Sound
+Knee Ligament Injuries,Swelling,Instability,,Difficulty Bearing Weight,Popping Sound
+Knee Ligament Injuries,Swelling,Instability,Sharp Pain,,Popping Sound
+Knee Ligament Injuries,Swelling,Instability,Sharp Pain,Difficulty Bearing Weight,
+Knee Ligament Injuries,Swelling,Instability,,Difficulty Bearing Weight,
+Knee Ligament Injuries,Swelling,,Sharp Pain,,Popping Sound
+Knee Ligament Injuries,,Instability,Sharp Pain,Difficulty Bearing Weight,
+Knee Ligament Injuries,Swelling,,Sharp Pain,Difficulty Bearing Weight,Popping Sound
+Pelvic Floor Dysfunction,Urinary Incontinence,Pain in Pelvic Area,Pain during Intercourse,Constipation,Muscle Spasms
+Pelvic Floor Dysfunction,Urinary Incontinence,,Pain during Intercourse,Constipation,Muscle Spasms
+Pelvic Floor Dysfunction,,Pain in Pelvic Area,Pain during Intercourse,Constipation,Muscle Spasms
+Pelvic Floor Dysfunction,Urinary Incontinence,Pain in Pelvic Area,,Constipation,Muscle Spasms
+Pelvic Floor Dysfunction,Urinary Incontinence,Pain in Pelvic Area,Pain during Intercourse,,Muscle Spasms
+Pelvic Floor Dysfunction,Urinary Incontinence,Pain in Pelvic Area,Pain during Intercourse,Constipation,
+Pelvic Floor Dysfunction,Urinary Incontinence,Pain in Pelvic Area,,,Muscle Spasms
+Pelvic Floor Dysfunction,Urinary Incontinence,,Pain during Intercourse,Constipation,Muscle Spasms
+Pelvic Floor Dysfunction,Urinary Incontinence,Pain in Pelvic Area,Pain during Intercourse,,Muscle Spasms
+Pelvic Floor Dysfunction,,Pain in Pelvic Area,Pain during Intercourse,Constipation,
+Cancer,Fatigue,Unexplained Weight Loss,Pain,Skin Changes,Lumps
+Cancer,Fatigue,,Pain,Skin Changes,Lumps
+Cancer,,Unexplained Weight Loss,Pain,Skin Changes,Lumps
+Cancer,Fatigue,Unexplained Weight Loss,,,Lumps
+Cancer,Fatigue,Unexplained Weight Loss,Pain,Skin Changes,Lumps
+Cancer,Fatigue,Unexplained Weight Loss,Pain,Skin Changes,Lumps
+Cancer,Fatigue,,,Skin Changes,Lumps
+Cancer,Fatigue,Unexplained Weight Loss,Pain,,Lumps
+Cancer,Fatigue,Unexplained Weight Loss,Pain,Skin Changes,Lumps
+Cancer,Fatigue,,Pain,Skin Changes,
