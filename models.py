@@ -54,6 +54,11 @@ class UserProfile(db.Model):
     def __repr__(self):
         return f'<UserProfile {self.first_name} {self.last_name}>'
     
+
+    
+
+     
+    
     
 
 

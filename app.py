@@ -333,14 +333,38 @@ diseases_list = {15: 'Fungal infection', 4: 'Allergy', 16: 'GERD', 9: 'Chronic c
 
 
 def get_predicted_value(patient_symptoms):
+    # Create a zero vector for the symptoms
     input_vector = np.zeros(len(symptoms_dict))
+    
+    # Debugging output
+    print(f"Patient symptoms received: {patient_symptoms}")
+    
     for item in patient_symptoms:
-        input_vector[symptoms_dict[item]] = 1
-    return diseases_list[rf.predict([input_vector])[0]]
+        # Check if the symptom is in the symptoms dictionary
+        if item in symptoms_dict:
+            input_vector[symptoms_dict[item]] = 1
+        else:
+            print(f"Warning: '{item}' is not a valid symptom.")
+
+    # Print the input vector for debugging
+    print(f"Input vector for prediction: {input_vector}")
+    
+    # Make the prediction
+    predicted_index = rf.predict([input_vector])[0]
+    
+    # Return the predicted disease based on the index
+    predicted_disease = diseases_list.get(predicted_index, "Unknown Disease")
+    print(f"Predicted disease: {predicted_disease}")  # Debugging output
+    
+    return predicted_disease
+
+    
+
+
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
-        symptoms = request.form.get('symptoms')
+        symptoms = request.form.get('custom_symptoms')
         
         if symptoms:
             # Process the input symptoms
